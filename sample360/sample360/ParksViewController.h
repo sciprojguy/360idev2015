@@ -13,7 +13,5 @@
 
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 
--(IBAction)filterMenuTapped:(id)sender;
-
 @end
 
