@@ -223,4 +223,75 @@
     XCTAssertEqual(7, filteredParks.count, @"Should be 7 golf courses");
 }
 
+// test/demo simple reduce predicates
+
+-(void)testReduceArrayFunctionCommaSeparatedStrings {
+    NSArray *myInArray = @[ @"One", @"Two", @"Three", @"Four" ];
+    NSString *concatenatedString = reduceArray2(myInArray, @"", ^(NSString *accumStr, NSString *elStr, BOOL firstElement, BOOL lastElement) {
+        NSString *str = nil;
+        if(YES == firstElement) {
+            str = elStr;
+        }
+        else {
+            str = [NSString stringWithFormat:@"%@, %@", accumStr, elStr];
+        }
+        return str;
+    });
+    
+    XCTAssertTrue( [@"One, Two, Three, Four" isEqualToString:concatenatedString], @"string not done right");
+}
+
+-(void)testReduceArrayFunctionCommaSeparatedStringsWithAnd {
+    NSArray *myInArray = @[ @"One", @"Two", @"Three", @"Four" ];
+    NSString *concatenatedString = reduceArray2(myInArray, @"", ^(NSString *accumStr, NSString *elStr, BOOL firstElement, BOOL lastElement) {
+        NSString *str = nil;
+        if(YES == firstElement) {
+            str = elStr;
+        }
+        else
+        if(YES == lastElement) {
+            str = [NSString stringWithFormat:@"%@ and %@", accumStr, elStr];
+        }
+        else
+        if(NO == lastElement) {
+            str = [NSString stringWithFormat:@"%@, %@", accumStr, elStr];
+        }
+        return str;
+    });
+    
+    XCTAssertTrue( [@"One, Two, Three and Four" isEqualToString:concatenatedString], @"string not done right");
+}
+
+-(void)testReduceArrayFunctionSum {
+    NSArray *myInArray = @[ @(12.5), @(15.6), @(50.0) ];
+    NSNumber *sum = reduceArray(myInArray, @(0), ^(NSNumber *accum, NSNumber *element) {
+        NSNumber *number;
+        number = @( [element doubleValue] + [accum doubleValue] );
+        return number;
+    });
+    
+    XCTAssertEqualWithAccuracy(78.1, [sum doubleValue], 0.1, @"Wrong sum");
+}
+
+-(void)testReduceArrayFunctionAvg {
+    NSArray *myInArray = @[ @(12.5), @(15.6), @(50.0) ];
+    NSDictionary *tuple = reduceArray2(myInArray, @(0), ^(NSDictionary *accum, NSNumber *element, BOOL firstNum, BOOL lastNum) {
+        NSDictionary *tuple;
+        if(firstNum) {
+            tuple = @{@"N":@(1), @"Sum":element};
+        }
+        else
+        {
+            tuple = @{@"N":@([accum[@"N"] intValue]+1), @"Sum":@([accum[@"Sum"] doubleValue] + [element doubleValue])};
+            if(lastNum) {
+                tuple = @{@"N":tuple[@"N"], @"Avg":@([tuple[@"Sum"] doubleValue]/[tuple[@"N"] integerValue])};
+            }
+        }
+        return tuple;
+    });
+    
+    XCTAssertEqual( 3, [tuple[@"N"] integerValue], @"should have been 3 numbers");
+    XCTAssertEqualWithAccuracy(26.0, [tuple[@"Avg"] doubleValue], 0.1, @"wrong average");
+}
+
 @end
