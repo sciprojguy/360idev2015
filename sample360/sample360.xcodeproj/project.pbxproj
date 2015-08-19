@@ -32,6 +32,7 @@
 		9A8B8ACC1B790F8B00F60044 /* sample360ParkMapFilterReduceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8B8ACB1B790F8B00F60044 /* sample360ParkMapFilterReduceTests.m */; };
 		9A8B8ACF1B7A106700F60044 /* ParksFunctional.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8B8ACE1B7A106700F60044 /* ParksFunctional.m */; };
 		9A8B8AD01B7A106700F60044 /* ParksFunctional.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8B8ACE1B7A106700F60044 /* ParksFunctional.m */; };
+		9A97E5481B84CF2F00D86D57 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9A97E5471B84CF2F00D86D57 /* LICENSE.txt */; };
 		9AE3C57F1B7BE31D0008DB8D /* ParkMapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE3C57E1B7BE31D0008DB8D /* ParkMapPin.m */; };
 		9AE3C5801B7BE31D0008DB8D /* ParkMapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE3C57E1B7BE31D0008DB8D /* ParkMapPin.m */; };
 		9AE3C5851B7D1B250008DB8D /* lc_icon_nature_150px.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AE3C5821B7D1B250008DB8D /* lc_icon_nature_150px.png */; };
@@ -87,6 +88,7 @@
 		9A8B8ACB1B790F8B00F60044 /* sample360ParkMapFilterReduceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sample360ParkMapFilterReduceTests.m; sourceTree = "<group>"; };
 		9A8B8ACD1B7A104F00F60044 /* ParksFunctional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParksFunctional.h; sourceTree = "<group>"; };
 		9A8B8ACE1B7A106700F60044 /* ParksFunctional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParksFunctional.m; sourceTree = "<group>"; };
+		9A97E5471B84CF2F00D86D57 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		9AE3C57D1B7BE31D0008DB8D /* ParkMapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParkMapPin.h; sourceTree = "<group>"; };
 		9AE3C57E1B7BE31D0008DB8D /* ParkMapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParkMapPin.m; sourceTree = "<group>"; };
 		9AE3C5821B7D1B250008DB8D /* lc_icon_nature_150px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lc_icon_nature_150px.png; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				9A8B8A571B6E52FC00F60044 /* Images.xcassets */,
 				9A8B8A591B6E52FD00F60044 /* LaunchScreen.xib */,
 				9A8B8A4A1B6E52FC00F60044 /* Supporting Files */,
+				9A97E5471B84CF2F00D86D57 /* LICENSE.txt */,
 			);
 			path = sample360;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A97E5481B84CF2F00D86D57 /* LICENSE.txt in Resources */,
 				9AE3C5871B7D1B250008DB8D /* openSpace.jpg in Resources */,
 				9A8B8A561B6E52FC00F60044 /* Main.storyboard in Resources */,
 				9A3899EA1B81030A00A9D0FE /* filter-512.png in Resources */,
